@@ -1,7 +1,7 @@
 {
   "name": "@rahulxf/about-me",
-  "version": "1.0.0",
-  "description": "A small npx package that prints Rahul Vishwakarma's about page, projects, OSS work, and GSoC/LFX links.",
+  "version": "1.2.0",
+  "description": "A small npx package that prints a clean Rahul Vishwakarma intro, links, optional detailed output, and a live llm.txt resume.",
   "bin": {
     "about-me": "index.js"
   },

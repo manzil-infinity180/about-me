@@ -1,27 +1,35 @@
 # @rahulxf/about-me
 
-A small `npx` package that prints my about page, projects, open source work, and GSoC/LFX links in the terminal.
+A small `npx` package that prints a clean intro plus links, with optional detailed modes.
 
 ## Usage
 
 ```bash
 npx @rahulxf/about-me
+npx @rahulxf/about-me --more
+npx @rahulxf/about-me --resume
+npx @rahulxf/about-me --tip
 ```
 
 ## What it shows
 
-- who I am
-- current work and recent milestones
-- open source contributions
-- selected projects
-- GSoC, LFX, and OSS guidance links
+- a clean default intro and main links
+- an extended `--more` mode for work, OSS, projects, and guidance
+- live `llm.txt` resume from `rahulxf.com`
+
+## Flags
+
+- `--more` prints more details about work, OSS, projects, and GSoC/LFX guidance
+- `--resume` fetches and prints [`llm.txt`](https://www.rahulxf.com/llm.txt)
+- `--tip` prints one random OSS / GSoC / LFX tip
+- `--help` shows the CLI help text
 
 ## Main links
 
 - Website: [rahulxf.com](https://rahulxf.com)
-- OSS / GSoC page: [rahulxf.com/oss](https://rahulxf.com/oss)
-- Projects: [rahulxf.com/projects](https://rahulxf.com/projects)
+- GitHub: [github.com/manzil-infinity180](https://github.com/manzil-infinity180)
 - Blog: [rahulxf.com/blog](https://rahulxf.com/blog)
+- OSS / GSoC page: [rahulxf.com/oss](https://rahulxf.com/oss)
 
 ## Inspiration
 
