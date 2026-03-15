@@ -1,0 +1,129 @@
+RAHUL VISHWAKARMA
+Software Engineer | Open Source Contributor | Go • Kubernetes • Software Supply Chain Security
+
+Gorakhpur, India | rahulvs2809@gmail.com
+Website: https://rahulxf.com
+GitHub: https://github.com/manzil-infinity180
+LinkedIn: https://www.linkedin.com/in/rahulxf
+X: https://x.com/rahulxf_
+YouTube: https://www.youtube.com/@rahulxfd
+Twitch: https://www.twitch.tv/rahulxf/
+
+SUMMARY
+Rahul Vishwakarma, also known as rahulxf, is a software engineer and open source contributor working across Go,
+Kubernetes, DevSecOps, and software supply chain security. He is exploring, learning, and contributing around
+in-toto, attestations, SBOMs, AI agent security, and cloud-native systems, while also building with Golang +
+ConnectRPC.
+
+CURRENT FOCUS
+- Software supply chain security
+- Go and cloud-native systems
+- in-toto, Witness, Archivista, attestations, and policy verification
+- AI agent security through aflock and related work
+- Kubernetes controllers, APIs, and developer tooling
+
+CORE SKILLS
+Go, Kubernetes, client-go, controller-runtime, CRDs, SharedInformers, Helm, GitOps, ArgoCD, Docker, CI/CD,
+Trivy, in-toto, Witness, Archivista, Rego/OPA, WebSockets, SPDY, ConnectRPC
+Frontend: React, TypeScript
+Databases: PostgreSQL, Redis, MongoDB
+Testing: Cypress, Jest
+
+EXPERIENCE
+
+Open Source Intern (Contractor) @ TestifySec
+Oct 2025 - Present
+- Contributing to CNCF graduated project in-toto (Witness + Archivista) for software supply chain security.
+- Implemented a Configuration Attestor to capture and verify CLI parameters for reproducible builds.
+- Built policy verification features in Witness to validate policy structure, certificates, and Rego modules.
+Tech: Go, in-toto, Witness, Archivista, Rego, Attestations, Supply Chain Security
+
+LFX Mentee / Maintainer / Mentor @ KubeStellar
+Jan 2025 - Aug 2025
+- 50+ merged PRs; maintainer for KubeStellar UI project ensuring code quality and guiding contributors.
+- Selected as mentor for the Plugin System project; led backend (Go) and frontend (React) development.
+- Developed Kubernetes controllers and CRDs using client-go and controller-runtime.
+- Built real-time workload log streaming and pod exec flows using SharedInformers, WebSockets, and SPDY.
+Tech: Go, Kubernetes, controller-runtime, SharedInformers, React, WebSockets, SPDY, Redis, CI/CD
+
+Google Summer of Code (GSoC) @ Submitty
+May 2024 - Aug 2024
+- Built end-to-end Cypress test suites for grading workflows and platform stability.
+- Improved TA UX and student privacy by adding anonymous IDs in downloadable assignment files.
+Tech: JavaScript, TypeScript, Cypress, E2E Testing
+
+OPEN SOURCE CONTRIBUTIONS
+
+in-toto Witness & Archivista
+GitHub: https://github.com/in-toto/witness
+- Contributing to software supply chain security by building attestors and policy verification features for
+  attestations, certificates, and Rego-based validation workflows.
+Tech: Go, Rego, Supply Chain Security, Attestations
+
+Aflock
+GitHub: https://github.com/aflock-ai/aflock
+- Working on cryptographically signed policy files that constrain AI agent execution with limits for tools,
+  files, spend, and domain access, while producing verifiable in-toto attestations for every action.
+Tech: Go, AI Agent Security, in-toto, Attestations, Policy Enforcement
+
+Rookery
+GitHub: https://github.com/aflock-ai/rookery
+- Contributing to a modular attestation framework monorepo that supports secure evidence generation workflows
+  around Witness-style systems.
+Tech: Go, Witness, Attestations, Supply Chain Security, Plugins
+
+CNCF KubeStellar
+GitHub: https://github.com/kubestellar/kubestellar
+- Worked on Kubernetes controllers, CRDs, real-time log streaming, and backend APIs for cluster workflows.
+Tech: Go, Kubernetes, WebSockets, SPDY
+
+Kubernetes TestGrid
+GitHub: https://github.com/kubernetes/test-infra
+- Contributing to Kubernetes CI/CD infrastructure and test result visualization workflows.
+Tech: Go, Kubernetes, CI/CD
+
+Kubebuilder
+GitHub: https://github.com/kubernetes-sigs/kubebuilder
+- Contributed around the Kubernetes operator and controller ecosystem.
+Tech: Go, Kubernetes, Operators
+
+PERSONAL PROJECTS
+
+Kubernetes CVE Scanner with Custom Controller
+GitHub: https://github.com/manzil-infinity180/k8s-custom-controller
+- Built a Kubernetes custom controller in Go that auto-generates Services and Ingresses for Deployments.
+- Integrated a Validating Admission Webhook with Trivy to block workloads with critical CVEs.
+Tech: Go, Kubernetes, Trivy, Helm, SharedInformers
+
+DumpStore
+GitHub: https://github.com/manzil-infinity180/dumpStore
+- Built a full-stack bookmarking platform with React, Node.js, and ML-powered tag suggestions.
+- Deployed services to Kubernetes with Helm and GitOps via ArgoCD.
+Tech: React, Node.js, Kubernetes, ArgoCD, Gemini API
+
+Real-Time WebRTC Communication Platform
+GitHub: https://github.com/manzil-infinity180/webrtc-client
+- Developed a WebRTC/WebSocket application with real-time messaging, file sharing, and video chat.
+- Integrated Monaco Editor and Yjs for collaborative coding workflows.
+Tech: WebRTC, WebSocket, React, Monaco Editor, Yjs
+
+WRITING
+- Blog index: https://rahulxf.com/blog
+- OSS / GSoC / LFX notes: https://rahulxf.com/oss
+- Medium: https://medium.com/@rahulxf
+
+Hosted articles on rahulxf.com:
+- https://rahulxf.com/blog/introducing-aflock-package-lock-json-but-for-ai-agents
+- https://rahulxf.com/blog/why-i-joined-testifysec-and-contribute-to-witness-archivista
+- https://rahulxf.com/blog/creating-an-alpine-package-for-a-go-application-apkbuild
+- https://rahulxf.com/blog/introduction-to-witness-verifying-software-supply-chain-attestations
+- https://rahulxf.com/blog/alpine-linux-package-management-practice
+
+MILESTONES
+- Upcoming June 2026: Speaker @ KubeCon + CloudNativeCon India 2026 for an in-toto Witness maintainer talk.
+- Started live streaming on YouTube and Twitch around AI agents, building in public, and live Golang sessions.
+- Contributor to GSoC, LFX, CNCF, Kubernetes, and in-toto ecosystem projects.
+
+EDUCATION
+Madan Mohan Malaviya University of Technology (MMMUT), Gorakhpur
+B.Tech in Computer Science and Engineering | 2022 - 2026

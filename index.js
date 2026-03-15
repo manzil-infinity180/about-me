@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+const fs = require("node:fs");
+const path = require("node:path");
+
 const C = {
   reset: "\x1b[0m",
   bold: "\x1b[1m",
@@ -18,7 +21,8 @@ const color = (tone, text) => `${tone}${text}${C.reset}`;
 const pad = (label, width = 18) => label.padEnd(width, " ");
 const row = (label, value) => `${color(C.yellow, pad(label))} ${value}`;
 const bullet = (text) => `${color(C.cyan, "•")} ${text}`;
-const section = (title) => `\n${color(C.bold + C.magenta, title)}`;
+const section = (title) => `\n\n${color(C.bold + C.magenta, title)}`;
+const localLlmPath = path.join(__dirname, "llm.txt");
 
 const links = {
   website: "https://rahulxf.com",
@@ -41,15 +45,10 @@ const links = {
   llm: "https://www.rahulxf.com/llm.txt",
 };
 
-const tips = [
-  "Start early. Open source programs reward visible consistency more than last-minute excitement.",
-  "A few strong PRs and clear communication usually matter more than many shallow contributions.",
-  "Use AI for exploration and debugging, but do not send slop PRs without understanding the codebase.",
-  "Read old issue threads and past PRs before touching unfamiliar code. That context saves time.",
-];
-
 const buildDefaultOutput = () => [
+  "",
   color(C.bold + C.green, "Rahul Vishwakarma / rahulxf"),
+  "",
   color(
     C.gray,
     "Software engineer, open source contributor, GSoC developer, LFX mentee, and software supply chain security explorer.",
@@ -66,16 +65,18 @@ const buildDefaultOutput = () => [
 
   section("Now"),
   bullet("Working across in-toto, aflock, rookery, Kubernetes, and software supply chain security."),
-  bullet("GitHub is love."),
 
   section("Run again"),
   color(C.blue, "npx @rahulxf/about-me"),
   color(C.blue, "npx @rahulxf/about-me --more"),
   color(C.blue, "npx @rahulxf/about-me --resume"),
+  "",
 ];
 
 const buildMoreOutput = () => [
+  "",
   color(C.bold + C.green, "Rahul Vishwakarma / rahulxf"),
+  "",
   color(
     C.gray,
     "Extended view with more work, projects, milestones, and OSS / GSoC / LFX details.",
@@ -112,46 +113,67 @@ const buildMoreOutput = () => [
   bullet(`GSoC proposal: ${links.gsocProposal}`),
   bullet(`YouTube playlist: ${links.gsocPlaylist}`),
   bullet(`CNCF mentoring repo: ${links.cncfMentoring}`),
+  "",
+  "",
 ];
 
 const buildHelpOutput = () => [
+  "",
   color(C.bold + C.green, "@rahulxf/about-me"),
   "",
   color(C.magenta, "Usage"),
   "  npx @rahulxf/about-me",
   "  npx @rahulxf/about-me --more",
   "  npx @rahulxf/about-me --resume",
-  "  npx @rahulxf/about-me --tip",
   "  npx @rahulxf/about-me --help",
   "",
   color(C.magenta, "Flags"),
   "  --more     Print more details about work, OSS, projects, and guidance",
-  "  --resume   Fetch and print live llm.txt from rahulxf.com",
-  "  --tip      Print one random OSS / GSoC / LFX tip",
+  "  --resume   Print the bundled llm.txt resume with spacing and colors",
   "  --help     Show this help message",
+  "",
 ];
-
-const buildTipOutput = () => {
-  const tip = tips[Math.floor(Math.random() * tips.length)];
-  return [color(C.bold + C.green, "Rahul tip"), "", bullet(tip), "", color(C.blue, links.oss)];
-};
 
 const printLines = (lines) => {
   process.stdout.write(`${lines.join("\n")}\n`);
 };
 
-const printResume = async () => {
-  try {
-    const response = await fetch(links.llm);
-    if (!response.ok) {
-      throw new Error(`Failed with status ${response.status}`);
+const formatResumeText = (text) => {
+  const lines = text.split("\n");
+
+  return lines.map((line, index) => {
+    if (!line.trim()) {
+      return "";
     }
 
-    const text = await response.text();
-    process.stdout.write(`${text.trim()}\n`);
+    if (index === 0) {
+      return color(C.bold + C.green, line);
+    }
+
+    if (index === 1) {
+      return color(C.gray, line);
+    }
+
+    if (/^[A-Z][A-Z\s/()&+-]+$/.test(line)) {
+      return `\n${color(C.bold + C.magenta, line)}`;
+    }
+
+    if (/^(Website|GitHub|LinkedIn|X|YouTube|Twitch|Frontend|Databases|Testing|Tech):/.test(line)) {
+      const [label, ...rest] = line.split(":");
+      return `${color(C.yellow, `${label}:`)}${rest.length ? ` ${rest.join(":").trim()}` : ""}`;
+    }
+
+    return line;
+  });
+};
+
+const printResume = async () => {
+  try {
+    const text = fs.readFileSync(localLlmPath, "utf8").trim();
+    printLines(["", ...formatResumeText(text), ""]);
   } catch (error) {
     process.stderr.write(
-      `${color(C.bold + C.yellow, "Could not fetch live resume.")}\n${String(error.message || error)}\n${links.llm}\n`,
+      `${color(C.bold + C.yellow, "Could not read bundled resume.")}\n${String(error.message || error)}\n${localLlmPath}\n`,
     );
     process.exitCode = 1;
   }
@@ -160,11 +182,6 @@ const printResume = async () => {
 const main = async () => {
   if (args.has("--help") || args.has("-h")) {
     printLines(buildHelpOutput());
-    return;
-  }
-
-  if (args.has("--tip")) {
-    printLines(buildTipOutput());
     return;
   }
 

@@ -8,20 +8,18 @@ A small `npx` package that prints a clean intro plus links, with optional detail
 npx @rahulxf/about-me
 npx @rahulxf/about-me --more
 npx @rahulxf/about-me --resume
-npx @rahulxf/about-me --tip
 ```
 
 ## What it shows
 
 - a clean default intro and main links
 - an extended `--more` mode for work, OSS, projects, and guidance
-- live `llm.txt` resume from `rahulxf.com`
+- a bundled formatted `llm.txt` resume
 
 ## Flags
 
 - `--more` prints more details about work, OSS, projects, and GSoC/LFX guidance
-- `--resume` fetches and prints [`llm.txt`](https://www.rahulxf.com/llm.txt)
-- `--tip` prints one random OSS / GSoC / LFX tip
+- `--resume` prints the bundled `llm.txt` resume with spacing and colors
 - `--help` shows the CLI help text
 
 ## Main links

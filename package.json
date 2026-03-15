@@ -1,13 +1,14 @@
 {
   "name": "@rahulxf/about-me",
-  "version": "1.2.0",
-  "description": "A small npx package that prints a clean Rahul Vishwakarma intro, links, optional detailed output, and a live llm.txt resume.",
+  "version": "1.4.0",
+  "description": "A small npx package that prints a clean Rahul Vishwakarma intro, optional detailed output, and a bundled formatted llm.txt resume.",
   "bin": {
     "about-me": "index.js"
   },
   "files": [
     "index.js",
-    "README.md"
+    "README.md",
+    "llm.txt"
   ],
   "keywords": [
     "rahulxf",
