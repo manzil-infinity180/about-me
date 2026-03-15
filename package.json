@@ -1,0 +1,36 @@
+{
+  "name": "@rahulxf/about-me",
+  "version": "1.0.0",
+  "description": "A small npx package that prints Rahul Vishwakarma's about page, projects, OSS work, and GSoC/LFX links.",
+  "bin": {
+    "about-me": "index.js"
+  },
+  "files": [
+    "index.js",
+    "README.md"
+  ],
+  "keywords": [
+    "rahulxf",
+    "about-me",
+    "npx",
+    "open-source",
+    "gsoc",
+    "lfx",
+    "kubernetes",
+    "in-toto"
+  ],
+  "homepage": "https://rahulxf.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manzil-infinity180/about-me.git"
+  },
+  "bugs": {
+    "url": "https://github.com/manzil-infinity180/about-me/issues"
+  },
+  "license": "MIT",
+  "author": "Rahul Vishwakarma <rahulvs2809@gmail.com>",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  }
+}
